@@ -7,7 +7,10 @@ int main(void) {
 	struct string s;
 	initstr(&s);
 
-	getstr(&s, "https://drednot.io/api/scoreboard");
+	char url[256];
+	snprintf(url, 256, "https://drednot.io/api/scoreboard?count=%d", GRAB_AMOUNT);
+
+	getstr(&s, url);
 
 	struct ship buf[1000];
 
