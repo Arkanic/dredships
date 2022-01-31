@@ -1,14 +1,15 @@
 CC=gcc
-CFLAGS=-O3 -lcurl
-OUT=dred.o net.o
+CFLAGS=-O3
+LIBS=-lcurl -lcjson
+OUT=dred.o net.o parse.o
 
 all: dred
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $<
+	$(CC) $(CFLAGS) -c $< $(LIBS)
 
 dred: $(OUT)
-	$(CC) $(CFLAGS) -g -o dred $(OUT)
+	$(CC) $(CFLAGS) -g -o dred $(OUT) $(LIBS)
 
 
 .PHONY: clean

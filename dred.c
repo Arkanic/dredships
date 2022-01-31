@@ -9,8 +9,10 @@ int main(void) {
 
 	getstr(&s, "https://drednot.io/api/scoreboard");
 
-	printf("%s\n", s.str);
-	free(s.str);
+	struct ship *buf = malloc(sizeof(struct ship) * GRAB_AMOUNT);
+
+	parsetext(s.str, buf);
+	printf("%s\n", buf[0].name);
 
 	return 0;
 }
