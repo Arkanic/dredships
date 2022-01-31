@@ -8,6 +8,7 @@ void parseship(cJSON *ship, struct ship *s) {
     s->hex = cJSON_GetObjectItem(ship, "hex_code")->valuestring;
     s->color = cJSON_GetObjectItem(ship, "color")->valueint;
     s->score = cJSON_GetObjectItem(ship, "score")->valueint;
+    printf("%s %s %d %d\n", s->name, s->hex, s->color, s->score);
 }
 
 void parsetext(char *sjson, struct ship *buf) {
@@ -18,9 +19,7 @@ void parsetext(char *sjson, struct ship *buf) {
     cJSON *ship;
     int i = 0;
     cJSON_ArrayForEach(ship, ships) {
-        struct ship s;
-        parseship(ship, &s);
-        buf[i] = s;
+        parseship(ship, &buf[i]);
         i++;
     }
 

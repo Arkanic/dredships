@@ -12,7 +12,7 @@ int main(void) {
 	struct ship *buf = malloc(sizeof(struct ship) * GRAB_AMOUNT);
 
 	parsetext(s.str, buf);
-	printf("%s\n", buf[0].name);
+	printf("%s\n", buf->name);
 
 	return 0;
 }
