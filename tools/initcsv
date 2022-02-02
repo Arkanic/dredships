@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+rm ships.csv
+touch ships.csv

@@ -29,10 +29,8 @@ int main(void) {
 		appendcsvships(fptr, buf, GRAB_AMOUNT);
 		printf("%s - %d\n", newship.name, newscore);
 
-		if(offset == newscore) {
-			if(offset > 0) offset -= 1;
-			else break;
-		} else offset = newscore;
+		if(offset == newscore) break;
+		else offset = newscore;
 
 		free(buf);
 

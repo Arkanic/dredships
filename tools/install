@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+sudo apt-get install libcjson-dev libcurl4-gnutls-dev --yes
