@@ -26,13 +26,13 @@ int main(void) {
 
 		struct ship newship = buf[GRAB_AMOUNT - 1];
 		int newscore = newship.score;
-
-		if(offset == newscore) break;
-
 		appendcsvships(fptr, buf, GRAB_AMOUNT);
 		printf("%s - %d\n", newship.name, newscore);
-		
-		offset = newscore;
+
+		if(offset == newscore) {
+			if(offset > 0) offset -= 1;
+			else break;
+		} else offset = newscore;
 
 		free(buf);
 
