@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-O3
 LIBS=-lcurl -lcjson
-OUT=dred.o net.o parse.o
+OUT=dred.o net.o parse.o csv.o
 
 all: dred
 
